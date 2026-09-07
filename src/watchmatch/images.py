@@ -15,4 +15,4 @@ def load_info_image(path):
                 "image_format": img.format,
             }
         
-    return None
+    raise FileNotFoundError(f"No file found: {path}")

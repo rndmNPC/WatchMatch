@@ -33,6 +33,7 @@ Answer briefly in `LEARNING_LOG.md`:
 - `assert`
 - `pytest.raises(...)`
 
+   ########     DONE.           ########
 ### Self-check
 
 - Can I explain why the test image should be created inside the temporary directory?
