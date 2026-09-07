@@ -12,3 +12,6 @@
 - **Test or evidence:**
 - **Next smallest step:**
 
+2026-08-04
+- finish what day one implemented
+- 

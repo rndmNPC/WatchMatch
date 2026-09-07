@@ -95,6 +95,10 @@ Write and test the first small image-loading function. No neural network yet.
 - The implementation and both tests can be explained line by line.
 - A Git commit exists.
 
+## Next learning sessions
+
+The guided exercises for the next four sessions are in [`docs/LESSONS.md`](docs/LESSONS.md). They cover testing and error handling, image normalization, NumPy fundamentals and a small command-line tool without giving away the implementations.
+
 ## Intended portfolio result
 
 After completion, a truthful CV bullet could follow this pattern:
@@ -102,4 +106,3 @@ After completion, a truthful CV bullet could follow this pattern:
 > Built and deployed a visual watch-search product comparing ResNet50 and CLIP embeddings across **N** labeled images; achieved **X Recall@5** and reduced median query latency to **Y ms** using Python, PyTorch, FastAPI and React.
 
 All placeholders remain empty until evaluation has been completed.
-
