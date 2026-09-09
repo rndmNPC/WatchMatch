@@ -26,3 +26,12 @@ Record decisions in the following format.
 
 **Consequence:** The first visible result is simpler, but the later CLIP comparison becomes meaningful and measurable.
 
+## 2026-09-07 - Function prepare image
+
+**context** : we need to decide what format the resnet 50 need s as input and to trasnformthem accordingly
+
+Input: path to a image 
+Output: Pillow bild in right dimensions and transformation (maybe already numpy array)
+Target size: 224 x 224
+Resize strategy: resize and cut
+Handling of L/RGBA images: 
