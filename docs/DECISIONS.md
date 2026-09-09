@@ -34,4 +34,18 @@ Input: path to a image
 Output: Pillow bild in right dimensions and transformation (maybe already numpy array)
 Target size: 224 x 224
 Resize strategy: resize and cut
-Handling of L/RGBA images: 
+Handling of L/RGBA images:
+
+> Superseded by the decision from 2026-09-09.
+
+## 2026-09-09 - Image preparation and ResNet preprocessing
+
+**Context:** Raw catalog images can have different sizes, aspect ratios and color modes. ResNet50 expects a specific RGB tensor format.
+
+**Options:** Stretch images, center-crop images, preserve the aspect ratio with white padding, or let Torchvision handle the model preprocessing.
+
+**Decision:** `prepare_image` keeps the aspect ratio, centers the image on a white background and converts RGBA images to RGB. The actual ResNet preprocessing is done with `weights.transforms()`.
+
+**Reason:** White padding avoids distortion and keeps the complete watch visible. `weights.transforms()` matches the pretrained ResNet50 weights.
+
+**Consequence:** `prepare_image` handles raw input safely, while Torchvision handles the model-specific resize, crop and normalization.

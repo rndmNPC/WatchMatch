@@ -2,9 +2,9 @@
 
 ## Milestone 1 - Image foundations
 
-- [ ] Python 3.12 environment works
-- [ ] image metadata loader with tests
-- [ ] resize and RGB conversion with tests
+- [x] Python 3.12 environment works
+- [x] image metadata loader with tests
+- [x] resize and RGB conversion with tests
 - [ ] NumPy array shapes and value ranges documented
 
 ## Milestone 2 - Small catalog
@@ -44,4 +44,3 @@
 - [ ] five user tests
 - [ ] README with architecture, limitations and measured results
 - [ ] short demo video
-
