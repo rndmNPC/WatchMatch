@@ -2,20 +2,18 @@
 
 Visual similarity search for watches, built as a computer-vision learning and portfolio project.
 
-## Current baseline
+## Current implementation
 
-The repository now contains a working terminal prototype:
+WatchMatch provides a working visual-retrieval pipeline:
 
 - load a local watch catalog from CSV,
-- create **2048-dimensional visual embeddings** with pretrained ResNet-50,
+- create 2048-dimensional visual embeddings with pretrained ResNet-50,
 - compare them with cosine similarity, and
 - print the five nearest catalog images for a query image.
 
-It is an honest baseline, not an exact-model identification product. There is currently no database, API, browser interface, model evaluation, or CLIP comparison.
-
 ### Run it locally
 
-The catalog images are deliberately not committed because their licences and provenance must be checked before publishing. Place images you are allowed to use in `data/raw/` and create `data/metadata.csv`. The required CSV shape is documented in [data/README.md](data/README.md).
+The catalog images stay local so that datasets can be selected and licensed independently. Place your images in `data/raw/` and create `data/metadata.csv`; the required CSV shape is documented in [data/README.md](data/README.md).
 
 ```bash
 uv sync --group dev
@@ -46,22 +44,20 @@ The first technical question is deliberately measurable:
 ## Why this project exists
 
 - Learn Python, image processing, PyTorch and model evaluation through a real product.
-- Build the core implementation independently instead of presenting AI-generated code as personal implementation.
+- Build a complete visual-search product from dataset design to user feedback.
 - Demonstrate a complete path from dataset and baseline to API, user interface, deployment and user feedback.
-- Produce honest CV metrics instead of merely listing technologies.
+- Produce measurable portfolio evidence alongside the implementation.
 
-## Future MVP definition
+## Product roadmap
 
-The broader product version will be complete when it can:
+The next product version will add:
 
-1. load and validate catalog images,
-2. create embeddings using a pretrained ResNet50,
-3. store embeddings and metadata locally,
-4. accept a query image,
-5. rank catalog images using cosine similarity,
-6. show the five closest results,
-7. evaluate retrieval quality on a labeled test set,
-8. run through a simple browser interface.
+1. persisted embeddings and metadata,
+2. evaluation on a labeled test set,
+3. a FastAPI inference service,
+4. a browser interface for image upload and results,
+5. a CLIP comparison model, and
+6. deployment and user feedback loops.
 
 CLIP is a comparison model, not the starting point. Explanations, user accounts, recommendations and commercial catalog integrations are outside the first MVP.
 
