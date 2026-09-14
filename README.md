@@ -85,7 +85,6 @@ WatchMatch/
 ├── src/
 │   └── watchmatch/       # application code written by Trung Hieu
 ├── tests/                # independently designed tests
-├── LEARNING_LOG.md       # daily understanding and debugging notes
 └── README.md
 ```
 
