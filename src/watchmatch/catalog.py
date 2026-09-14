@@ -1,7 +1,9 @@
 import csv
 from pathlib import Path
+
 from PIL import Image
-from watchmatch.embeddings import embed_image, load_embedding_model
+
+from watchmatch.embeddings import embed_image
 
 
 def build_catalog(
@@ -34,10 +36,3 @@ def build_catalog(
             )
 
     return catalog
-
-if __name__ == "__main__":
-    model, preprocess = load_embedding_model()
-    res = build_catalog(Path("data/metadata.csv"),Path("data/raw"), model, preprocess)
-    print(len(res))
-    print(res[0]["filename"])
-    print(res[0]["embedding"].shape)

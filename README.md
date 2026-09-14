@@ -1,6 +1,39 @@
 # WatchMatch
 
-Visual similarity search for watches, built as an end-to-end computer-vision learning and portfolio project.
+Visual similarity search for watches, built as a computer-vision learning and portfolio project.
+
+## Current baseline
+
+The repository now contains a working terminal prototype:
+
+- load a local watch catalog from CSV,
+- create **2048-dimensional visual embeddings** with pretrained ResNet-50,
+- compare them with cosine similarity, and
+- print the five nearest catalog images for a query image.
+
+It is an honest baseline, not an exact-model identification product. There is currently no database, API, browser interface, model evaluation, or CLIP comparison.
+
+### Run it locally
+
+The catalog images are deliberately not committed because their licences and provenance must be checked before publishing. Place images you are allowed to use in `data/raw/` and create `data/metadata.csv`. The required CSV shape is documented in [data/README.md](data/README.md).
+
+```bash
+uv sync --group dev
+PYTHONPATH=src uv run python -m watchmatch.demo data/raw/query.jpg
+uv run pytest
+```
+
+The first demo run downloads torchvision's pretrained ResNet-50 weights. Use `--limit 5` to change the number of displayed matches.
+
+```text
+query image + catalog images
+          │
+          ▼
+pretrained ResNet-50 feature extractor
+          │
+          ▼
+2048-dimensional image embeddings → cosine similarity → top-k matches
+```
 
 ## Product idea
 
@@ -17,9 +50,9 @@ The first technical question is deliberately measurable:
 - Demonstrate a complete path from dataset and baseline to API, user interface, deployment and user feedback.
 - Produce honest CV metrics instead of merely listing technologies.
 
-## MVP definition
+## Future MVP definition
 
-Version 1 is complete when it can:
+The broader product version will be complete when it can:
 
 1. load and validate catalog images,
 2. create embeddings using a pretrained ResNet50,
@@ -106,3 +139,7 @@ After completion, a truthful CV bullet could follow this pattern:
 > Built and deployed a visual watch-search product comparing ResNet50 and CLIP embeddings across **N** labeled images; achieved **X Recall@5** and reduced median query latency to **Y ms** using Python, PyTorch, FastAPI and React.
 
 All placeholders remain empty until evaluation has been completed.
+
+## License
+
+Released under the [MIT License](LICENSE).

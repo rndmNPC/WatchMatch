@@ -3,8 +3,11 @@ from watchmatch.embeddings import cosine_similarity
 def rank_catalog(
     query_embedding,
     catalog,
-    limit = 5,
+    limit: int = 5,
 ):
+    if limit < 1:
+        raise ValueError("limit must be at least 1")
+
     results = []
 
     # Compare the query embedding with every precomputed catalog embedding.
