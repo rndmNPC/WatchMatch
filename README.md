@@ -88,45 +88,6 @@ WatchMatch/
 └── README.md
 ```
 
-## Learning agreement
-
-1. Trung Hieu writes every core function first.
-2. Before requesting code, document an own attempt or a precise blocker.
-3. AI assistance starts with explanations, questions, hints or review.
-4. Every feature includes at least one independently designed test.
-5. Every commit must be explainable without opening an AI conversation.
-6. Numbers enter the CV only after they have actually been measured.
-
-## Day 1 - first 60 minutes
-
-### Goal
-
-Write and test the first small image-loading function. No neural network yet.
-
-### Tasks
-
-1. Create and activate a Python 3.12 virtual environment.
-2. Install only `pillow` and `pytest`.
-3. Create `src/watchmatch/images.py` yourself.
-4. Define what `load_image_info(path)` should return: width, height, color mode and image format.
-5. Before implementing it, write two test cases:
-   - a valid temporary RGB image returns the expected information;
-   - a missing file raises a clear error.
-6. Implement the smallest code that makes the tests pass.
-7. Explain why width and height can be confused between Pillow, NumPy and PyTorch.
-8. Commit the result with a specific message.
-
-### Definition of done
-
-- `pytest` passes.
-- The function contains no copied unexplained code.
-- The implementation and both tests can be explained line by line.
-- A Git commit exists.
-
-## Next learning sessions
-
-The guided exercises for the next four sessions are in [`docs/LESSONS.md`](docs/LESSONS.md). They cover testing and error handling, image normalization, NumPy fundamentals and a small command-line tool without giving away the implementations.
-
 ## Intended portfolio result
 
 After completion, a truthful CV bullet could follow this pattern:
